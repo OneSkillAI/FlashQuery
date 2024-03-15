@@ -32,28 +32,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
             </>
           }
           description={AI_DESCRIPTION}
-        ></Hero>
-       /* <div className="container max-w-4xl flex gap-20 flex-col">
-          <div>
-            <h2 className="text-2xl font-bold mb-3">Database Schemas</h2>
-
-            {props.extensions && props.extensions.length > 0 ? (
-              <div className="grid grid-cols-3 gap-3">
-                {props.extensions.map((extension) => {
-                  return (
-                    <ExtensionCard
-                      extension={extension}
-                      key={extension.id}
-                      showContextMenu={false}
-                    />
-                  );
-                })}
-              </div>
-            ) :
-              <p className="text-muted-foreground max-w-xl">No extentions created</p>
-            }
-
-          </div>*/
+        ></Hero>       
           <div>
             <h2 className="text-2xl font-bold mb-3">AI Agents</h2>
 
