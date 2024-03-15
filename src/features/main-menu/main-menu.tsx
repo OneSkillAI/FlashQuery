@@ -7,12 +7,12 @@ import {
   menuIconProps,
 } from "@/ui/menu";
 import {
-  Book,
+  Vault,
   Home,
   MessageCircle,
   Database,
-  Sheet,
-  VenetianMask,
+  History,
+  Drama,
 } from "lucide-react";
 import { getCurrentUser } from "../auth-page/helpers";
 import { MenuLink } from "./menu-link";
@@ -38,25 +38,25 @@ export const MainMenu = async () => {
               <MessageCircle {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="Persona">
+          <MenuItem tooltip="Agents">
             <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
               <VenetianMask {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="extensions">
+          <MenuItem tooltip="Databases">
             <MenuLink href="/extensions" ariaLabel="Go to the Databases configuration page">
               <Database {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="prompts">
-            <MenuLink href="/prompt" ariaLabel="Go to the Prompt Library configuration page">
+          <MenuItem tooltip="Prompt Vault">
+            <MenuLink href="/prompt" ariaLabel="Go to the Prompt Vault configuration page">
               <Book {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           {user.isAdmin && (
             <>
-              <MenuItem tooltip="reporting">
-                <MenuLink href="/reporting" ariaLabel="Go to the Admin reporting" >
+              <MenuItem tooltip="All Chat History (Admin)">
+                <MenuLink href="/reporting" ariaLabel="Go to the Admin reports" >
                   <Sheet {...menuIconProps} />
                 </MenuLink>
               </MenuItem>
