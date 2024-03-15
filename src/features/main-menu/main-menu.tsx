@@ -10,7 +10,7 @@ import {
   Book,
   Home,
   MessageCircle,
-  PocketKnife,
+  Database,
   Sheet,
   VenetianMask,
 } from "lucide-react";
@@ -44,8 +44,8 @@ export const MainMenu = async () => {
             </MenuLink>
           </MenuItem>
           <MenuItem tooltip="extensions">
-            <MenuLink href="/extensions" ariaLabel="Go to the Extensions configuration page">
-              <PocketKnife {...menuIconProps} />
+            <MenuLink href="/extensions" ariaLabel="Go to the Databases configuration page">
+              <Database {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           <MenuItem tooltip="prompts">
