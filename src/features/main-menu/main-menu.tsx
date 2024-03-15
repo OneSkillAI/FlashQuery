@@ -38,7 +38,7 @@ export const MainMenu = async () => {
               <MessageCircle {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="Agents">
+          <MenuItem tooltip="Assistants">
             <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
               <Drama {...menuIconProps} />
             </MenuLink>
