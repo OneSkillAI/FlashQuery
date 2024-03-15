@@ -35,7 +35,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
         ></Hero>  
         <div className="container max-w-4xl flex gap-20 flex-col">
           <div>
-            <h2 className="text-2xl font-bold mb-3">AI Agents</h2>
+            <h2 className="text-2xl font-bold mb-3">AI Assistants</h2>
 
             {props.personas && props.personas.length > 0 ? (
               <div className="grid grid-cols-3 gap-3">
@@ -50,7 +50,7 @@ export const ChatHome: FC<ChatPersonaProps> = (props) => {
                 })}
               </div>
             ) :
-              <p className="text-muted-foreground max-w-xl">No agents created</p>
+              <p className="text-muted-foreground max-w-xl">No assistants created</p>
             }
           </div>
         </div>
