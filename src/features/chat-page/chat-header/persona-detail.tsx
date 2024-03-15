@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/features/ui/sheet";
-import { VenetianMask } from "lucide-react";
+import { Drama } from "lucide-react";
 import { FC } from "react";
 import { ChatThreadModel } from "../chat-services/models";
 
@@ -24,12 +24,12 @@ export const PersonaDetail: FC<Props> = (props) => {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant={"outline"} size={"icon"} aria-label="Current Chat Persona Menu">
-          <VenetianMask size={16} />
+          <Drama size={16} />
         </Button>
       </SheetTrigger>
       <SheetContent className="min-w-[480px] sm:w-[540px] flex flex-col">
         <SheetHeader>
-          <SheetTitle>Persona</SheetTitle>
+          <SheetTitle>Assistant</SheetTitle>
         </SheetHeader>
         <ScrollArea className="flex-1 -mx-6 flex" type="always">
           <div className="pb-6 px-6 flex gap-8 flex-col  flex-1">
