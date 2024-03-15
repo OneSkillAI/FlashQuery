@@ -86,7 +86,7 @@ export const AddNewPersona: FC<Props> = (props) => {
                   required
                   name="name"
                   defaultValue={persona.name}
-                  placeholder="Name of your persona"
+                  placeholder="Name of your assistant"
                 />
               </div>
               <div className="grid gap-2">
