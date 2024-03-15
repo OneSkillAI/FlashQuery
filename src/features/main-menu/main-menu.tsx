@@ -40,7 +40,7 @@ export const MainMenu = async () => {
           </MenuItem>
           <MenuItem tooltip="Agents">
             <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
-              <VenetianMask {...menuIconProps} />
+              <Drama {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           <MenuItem tooltip="Databases">
@@ -50,14 +50,14 @@ export const MainMenu = async () => {
           </MenuItem>
           <MenuItem tooltip="Vault">
             <MenuLink href="/prompt" ariaLabel="Go to the Prompt Vault configuration page">
-              <Book {...menuIconProps} />
+              <Vault {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           {user.isAdmin && (
             <>
               <MenuItem tooltip="Reporting">
                 <MenuLink href="/reporting" ariaLabel="Go to the Admin reports" >
-                  <Sheet {...menuIconProps} />
+                  <History {...menuIconProps} />
                 </MenuLink>
               </MenuItem>
             </>
