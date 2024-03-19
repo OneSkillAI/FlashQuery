@@ -18,8 +18,6 @@ export const ExtensionHero = () => {
       description={`Create database schema connections to use with your assistants`}
     >
       <NewExtension />
-     /* <BingSearch />
-      <AISearch />*/
     </Hero>
   );
 };
