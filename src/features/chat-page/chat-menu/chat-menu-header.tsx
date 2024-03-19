@@ -7,7 +7,7 @@ export const ChatMenuHeader = () => {
     <div className="flex p-2 px-3 justify-end">
       <form action={CreateChatAndRedirect} className="flex gap-2 pr-3">
         {}
-        <span className="self-center text-sm font-medium">Chat History</span>
+        <span className="self-center text-sm font-medium">Clear Chat History</span>
         <ChatContextMenu />
       </form>
     </div>
