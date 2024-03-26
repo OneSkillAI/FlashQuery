@@ -1,13 +1,13 @@
 import { HeroButton } from "@/features/ui/hero";
-import { PocketKnife } from "lucide-react";
+import { Database } from "lucide-react";
 import { extensionStore } from "../extension-store";
 
 export const NewExtension = () => {
   return (
     <HeroButton
-      title="New Extension"
-      description="Create a new extension with your own internal API"
-      icon={<PocketKnife />}
+      title="New Database"
+      description="Create a new database schema connection"
+      icon={<Database />}
       onClick={() => extensionStore.newAndOpenSlider()}
     />
   );
