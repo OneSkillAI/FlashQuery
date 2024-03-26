@@ -15,7 +15,7 @@ export const ExtensionHero = () => {
           <Database size={36} strokeWidth={1.5} /> Databases
         </>
       }
-      description={`Create database schema connections to use with your assistants`}
+      description={`Create database schema connections to use with your assistants.`}
     >
       <NewExtension />
     </Hero>
