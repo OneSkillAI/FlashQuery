@@ -22,13 +22,13 @@ export const PersonaHero = () => {
           personaStore.newPersonaAndOpen({
             name: "",
             personaMessage: `Personality:
-[Describe the personality e.g. the tone of voice, the way they speak, the way they act, etc.]
+Describe the personality e.g. the tone of voice, the way they speak and the way they act.
 
 Expertise:
-[Describe the expertise of the personality e.g. Customer service, Marketing copywriter, etc.]
+Describe the expertise of the personality e.g. Customer service, Marketing copywriter etc.
 
 Example:
-[Describe an example of the personality e.g. a Marketing copywriter who can write catchy headlines.]`,
+Describe an example of the personality e.g. a Marketing copywriter who can write catchy headlines.`,
             description: "",
           })
         }
