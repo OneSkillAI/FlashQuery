@@ -101,13 +101,13 @@ export const AddNewPersona: FC<Props> = (props) => {
               </div>
               <div className="grid gap-2 flex-1 ">
                 <Label htmlFor="personaMessage">Personality</Label>
-                <Input
-                  type="text"
+                <Textarea
+                  className="min-h-[300px]"
                   required
                   defaultValue={persona.personaMessage}
                   name="personaMessage"
                   placeholder="Personality of your persona"
-                />                
+                />          
               </div>
             </div>
           </ScrollArea>
