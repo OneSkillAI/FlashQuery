@@ -76,23 +76,10 @@ export const ChatInput = () => {
         }}
       />
       <ChatInputActionArea>
-        <ChatInputSecondaryActionArea>
-          <AttachFile
-            onClick={(formData) =>
-              fileStore.onFileChange({ formData, chatThreadId })
-            }
-          />
+        <ChatInputSecondaryActionArea>         
           <PromptSlider />
         </ChatInputSecondaryActionArea>
-        <ChatInputPrimaryActionArea>
-          <ImageInput />
-          <Microphone
-            startRecognition={() => speechToTextStore.startRecognition()}
-            stopRecognition={() => speechToTextStore.stopRecognition()}
-            isPlaying={isPlaying}
-            stopPlaying={() => textToSpeechStore.stopPlaying()}
-            isMicrophoneReady={isMicrophoneReady}
-          />
+        <ChatInputPrimaryActionArea>         
           {loading === "loading" ? (
             <StopChat stop={() => chatStore.stopGeneratingMessages()} />
           ) : (
