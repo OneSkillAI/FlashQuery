@@ -12,12 +12,12 @@ export const PromptHero = () => {
         </>
       }
       description={
-        "Prompt templates are statements or questions meant to help users get creative without having to come up with ideas from scratch."
+        "Store your most useful prompts and share them with your team."
       }
     >
       <HeroButton
         title="Add New Prompt"
-        description="Build your own prompt template"
+        description="Build your own prompt template."
         icon={<Book />}
         onClick={() => promptStore.newPrompt()}
       />      
