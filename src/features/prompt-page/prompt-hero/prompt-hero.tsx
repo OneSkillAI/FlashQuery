@@ -12,7 +12,7 @@ export const PromptHero = () => {
         </>
       }
       description={
-        "Store your most useful prompts and share them with your team."
+        "Store your most useful prompts as templates and share them with your team."
       }
     >
       <HeroButton
