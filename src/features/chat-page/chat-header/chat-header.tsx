@@ -34,7 +34,7 @@ export const ChatHeader: FC<Props> = (props) => {
           <ExtensionDetail
             disabled={props.chatDocuments.length !== 0}
             extensions={props.extensions}
-            selectedExtensionId={props.chatThread.extension ? props.chatThread.extension[0] : null} 
+            installedExtensionIds={props.chatThread.extension}
             chatThreadId={props.chatThread.id}
           />
         </div>
