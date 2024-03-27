@@ -52,7 +52,7 @@ export const AddPromptSlider: FC<SliderProps> = (props) => {
     >
       <SheetContent className="min-w-[480px] sm:w-[540px] flex flex-col">
         <SheetHeader>
-          <SheetTitle>Persona</SheetTitle>
+          <SheetTitle>Prompt</SheetTitle>
         </SheetHeader>
         <form action={formAction} className="flex-1 flex flex-col">
           <ScrollArea
@@ -82,13 +82,13 @@ export const AddPromptSlider: FC<SliderProps> = (props) => {
                 />
               </div>
               <div className="grid gap-2">
-                <Label htmlFor="description">Short description</Label>
+                <Label htmlFor="description">Prompt Instructions</Label>
                 <Textarea
                   required
                   defaultValue={prompt.description}
                   name="description"
                   className="h-96"
-                  placeholder="eg: Write a funny joke that a 5 year old would understand"
+                  placeholder="e.g. Write me a SQL query that retrieves the average salary of all departments."
                 />
               </div>
             </div>
