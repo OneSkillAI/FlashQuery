@@ -62,7 +62,7 @@ export const AddExtension: FC<Props> = (props) => {
     >
       <SheetContent className="min-w-[680px] flex flex-col">
         <SheetHeader>
-          <SheetTitle>Extension</SheetTitle>
+          <SheetTitle>Database</SheetTitle>
         </SheetHeader>
         <form action={formAction} className="flex-1 flex flex-col ">
           <ScrollArea
@@ -79,7 +79,7 @@ export const AddExtension: FC<Props> = (props) => {
                   required
                   name="name"
                   defaultValue={extension.name}
-                  placeholder="Name of your Extension"
+                  placeholder="Name of your Database"
                 />
               </div>
               <div className="grid gap-2">
@@ -98,7 +98,7 @@ export const AddExtension: FC<Props> = (props) => {
                   required
                   defaultValue={extension.executionSteps}
                   name="executionSteps"
-                  placeholder="Describe specialties and the steps to execute the extension"
+                  placeholder="You are an expert in searching internal documents using aisearch function. No citation is needed."
                 />
               </div>
               <EndpointHeader />
