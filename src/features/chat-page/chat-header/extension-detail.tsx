@@ -22,12 +22,12 @@ interface Props {
 
 export const ExtensionDetail: FC<Props> = (props) => {
   const toggleInstall = async (isChecked: boolean, extensionId: string) => {
-    if (isChecked) {
-      await chatStore.AddExtensionToChatThread(extensionId);
-    } else {
-      await chatStore.RemoveExtensionFromChatThread(extensionId);
-    }
-  };
+  if (isChecked) {
+    await chatStore.SetExtensionsForChatThread([extensionId]);
+  } else {
+    await chatStore.SetExtensionsForChatThread([]);
+  }
+};
 
   const installedCount = props.installedExtensionIds?.length ?? 0;
   const totalCount = props.extensions.length;
