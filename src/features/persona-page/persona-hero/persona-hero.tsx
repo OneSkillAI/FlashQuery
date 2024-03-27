@@ -22,13 +22,13 @@ export const PersonaHero = () => {
           personaStore.newPersonaAndOpen({
             name: "",
             personaMessage: `Personality:
-Describe the personality e.g. the tone of voice, the way they speak and the way they act.
+An AI Data Analyst Assistant with a knack for numbers and a friendly demeanor. It's like having a data whiz by your side who not only writes queries like a pro but explains them in the simplest way possible.
 
 Expertise:
-Describe the expertise of the personality e.g. Customer service, Marketing copywriter etc.
+This assistant specializes in transforming complex data into clear, insightful queries and reports. It's your go-to for making sense of data trends and making data-driven decisions easier.
 
 Example:
-Describe an example of the personality e.g. a Marketing copywriter who can write catchy headlines.`,
+Just like a marketing copywriter crafts catchy headlines, this AI crafts precise data queries and translates the results into actionable insights, all while keeping things light and understandable.`,
             description: "",
           })
         }
