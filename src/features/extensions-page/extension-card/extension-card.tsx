@@ -46,7 +46,6 @@ export const ExtensionCard: FC<Props> = (props) => {
           </Button>
         )}
 
-        <StartNewExtensionChat extension={extension} />
       </CardFooter>
     </Card>
   );
