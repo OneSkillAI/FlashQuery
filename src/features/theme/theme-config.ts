@@ -1,4 +1,4 @@
-export const AI_NAME = "AI Analyst Accelerator";
+export const AI_NAME = "FlashQuery";
 export const AI_DESCRIPTION = "©OneSkill | support@oneskill.ai";
 export const CHAT_DEFAULT_PERSONA = AI_NAME + " default";
 
