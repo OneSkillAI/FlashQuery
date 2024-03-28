@@ -9,7 +9,7 @@ import {
 import {
   Vault,
   Home,
-  MessageCircle,
+  MessageCirclePlus,
   Database,
   History,
   Drama,
@@ -35,7 +35,7 @@ export const MainMenu = async () => {
         <MenuItemContainer>
           <MenuItem tooltip="Chat">
             <MenuLink href="/chat" ariaLabel="Go to the Chat page">
-              <MessageCircle {...menuIconProps} />
+              <MessageCirclePlus {...menuIconProps} />
             </MenuLink>
           </MenuItem>
           <MenuItem tooltip="Assistants">
