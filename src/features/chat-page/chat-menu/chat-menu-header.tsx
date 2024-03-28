@@ -1,6 +1,6 @@
 import { CreateChatAndRedirect } from "../chat-services/chat-thread-service";
 import { ChatContextMenu } from "./chat-context-menu";
-// import { NewChat } from "./new-chat"; // This import is now unnecessary
+import { NewChat } from "./new-chat"; // This import is now unnecessary
 
 export const ChatMenuHeader = () => {
   return (
