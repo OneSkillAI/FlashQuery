@@ -20,6 +20,17 @@ export const CreatePrompt = async (
   try {
     const user = await getCurrentUser();
 
+    if (!user.isAdmin) {
+      return {
+        status: "UNAUTHORIZED",
+        errors: [
+          {
+            message: `Error: Must be an admin to create prompts.`,
+          },
+        ],
+      };
+    }
+
     const modelToSave: PromptModel = {
       id: uniqueId(),
       name: props.name,
