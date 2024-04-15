@@ -1,4 +1,3 @@
-import { useSession } from "next-auth/react";
 import { FC } from "react";
 import {
   Card,
@@ -18,28 +17,24 @@ interface Props {
 }
 
 export const PersonaCard: FC<Props> = (props) => {
-  const { data: sessionData } = useSession(); // Correctly destructured session data
-  const isAdmin = sessionData?.user?.isAdmin || false; // Safely access 'isAdmin'
-  const isFlashQuery = props.persona.name === "FlashQuery";
-
+  const { persona } = props;
   return (
-    <Card key={props.persona.id} className="flex flex-col">
+    <Card key={persona.id} className="flex flex-col">
       <CardHeader className="flex flex-row">
-        <CardTitle className="flex-1">{props.persona.name}</CardTitle>
+        <CardTitle className="flex-1">{persona.name}</CardTitle>
         {props.showContextMenu && (
           <div>
-            <PersonaCardContextMenu persona={props.persona} />
+            <PersonaCardContextMenu persona={persona} />
           </div>
         )}
       </CardHeader>
       <CardContent className="text-muted-foreground flex-1">
-        {props.persona.description}
+        {persona.description}
       </CardContent>
-      <CardFooter className="gap-1 content-stretch">
-        {(!isFlashQuery || isAdmin) && props.showContextMenu && (
-          <ViewPersona persona={props.persona} />
-        )}
-        <StartNewPersonaChat persona={props.persona} />
+      <CardFooter className="gap-1 content-stretch f">
+        {props.showContextMenu && <ViewPersona persona={persona} />}
+
+        <StartNewPersonaChat persona={persona} />
       </CardFooter>
     </Card>
   );
