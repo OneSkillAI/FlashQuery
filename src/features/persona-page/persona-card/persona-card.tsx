@@ -31,8 +31,7 @@ export const PersonaCard: FC<Props> = (props) => {
       <CardContent className="text-muted-foreground flex-1">
         {persona.description}
       </CardContent>
-      <CardFooter className="gap-1 content-stretch f">
-        {props.showContextMenu && <ViewPersona persona={persona} />}
+      <CardFooter className="gap-1 content-stretch f">        
 
         <StartNewPersonaChat persona={persona} />
       </CardFooter>
