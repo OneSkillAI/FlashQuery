@@ -103,7 +103,7 @@ export const AddNewPersona: FC<Props> = (props) => {
                   required
                   defaultValue={persona.personaMessage}
                   name="personaMessage"
-                  placeholder="Personality of your persona"
+                  placeholder="Instructions for your assistant"
                 />          
               </div>
             </div>
