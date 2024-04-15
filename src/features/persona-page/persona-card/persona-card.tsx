@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import { FC } from "react";
 import {
   Card,
@@ -18,6 +19,9 @@ interface Props {
 
 export const PersonaCard: FC<Props> = (props) => {
   const { persona } = props;
+  const { data } = useSession();
+  const isAdmin = data?.user?.isAdmin || false; 
+  const isFlashQuery = props.persona.name === "FlashQuery";   
   return (
     <Card key={persona.id} className="flex flex-col">
       <CardHeader className="flex flex-row">
@@ -32,7 +36,7 @@ export const PersonaCard: FC<Props> = (props) => {
         {persona.description}
       </CardContent>
       <CardFooter className="gap-1 content-stretch f">
-        {props.showContextMenu && <ViewPersona persona={persona} />}
+        {props.showContextMenu && (!isFlashQuery || isAdmin) && <ViewPersona persona={persona} />}
 
         <StartNewPersonaChat persona={persona} />
       </CardFooter>
