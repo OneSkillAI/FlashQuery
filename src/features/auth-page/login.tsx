@@ -27,11 +27,11 @@ export const LogIn: FC<LoginProps> = (props) => {
           <span className="text-primary">{AI_NAME}</span>
         </CardTitle>
         <CardDescription>
-          Login with your Microsoft account
+          Sign in with your Microsoft account
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
-        <Button onClick={() => signIn("azure-ad")}> Microsoft</Button>
+        <Button onClick={() => signIn("azure-ad")}>Sign In</Button>
         {props.isDevMode ? (
           <Button onClick={() => signIn("localdev")}>
             Basic Auth (DEV ONLY)
