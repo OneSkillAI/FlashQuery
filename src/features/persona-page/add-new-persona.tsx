@@ -50,6 +50,10 @@ export const AddNewPersona: FC<Props> = (props) => {
     );
   };
 
+  const personaMessageDefault = isAdmin && persona.name === "FlashQuery" 
+                                ? persona.personaMessage 
+                                : "Admin Only";
+
   return (
     <Sheet
       open={isOpened}
@@ -100,7 +104,7 @@ export const AddNewPersona: FC<Props> = (props) => {
                 <Textarea
                   className="min-h-[300px]"
                   required
-                  defaultValue={isAdmin ? persona.personaMessage : "Admin Only"}
+                  defaultValue={personaMessageDefault}
                   name="personaMessage"
                   placeholder="Personality of your assistant"
                 />          
