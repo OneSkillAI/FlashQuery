@@ -19,6 +19,7 @@ interface Props {
 
 export const PersonaCard: FC<Props> = (props) => {
   const { persona } = props;
+  const { data: sessionData } = useSession();
   const isAdmin = sessionData?.user?.isAdmin || false;
   const isFlashQuery = props.persona.name === "FlashQuery";
   return (
