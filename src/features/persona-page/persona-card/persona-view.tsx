@@ -21,8 +21,16 @@ interface Props {
 export const ViewPersona: FC<Props> = (props) => {
   const { persona } = props;
   const { data } = useSession();
+
+
   const isAdmin = data?.user?.isAdmin || false; 
-  const isFlashQuery = props.persona.name === "FlashQuery"; 
+
+
+  const defaultMessage = "Only administrators can see the instructions for this assistant";
+  const textareaDefaultValue = !isAdmin && persona.name === "FlashQuery" 
+                               ? defaultMessage 
+                               : persona.personaMessage;
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -35,30 +43,22 @@ export const ViewPersona: FC<Props> = (props) => {
           <SheetTitle>{persona.name}</SheetTitle>
         </SheetHeader>
         <ScrollArea className="flex-1 -mx-6 flex" type="always">
-          <div className="p-6 flex gap-8 flex-col  flex-1">
-            {(isFlashQuery && !isAdmin) ? (
-              <div className="text-red-500 font-bold">
-                Error: Only Administrators can view the instructions for this assistant.
-              </div>
-            ) : (
-              <>
-                <SheetDescription>{persona.description}</SheetDescription>
-                <div className="flex flex-col gap-3">
-                  <Textarea
-                    disabled
-                    className="min-h-[300px]"
-                    defaultValue={persona.personaMessage}
-                    name="personaMessage"
-                    placeholder="Personality of your persona"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    {persona.isPublished
-                      ? `This is published and everyone in your organisation can use ${persona.name} persona`
-                      : "This is only visible to you"}
-                  </p>
-                </div>
-              </>
-            )}
+          <div className="p-6 flex gap-8 flex-col flex-1">
+            <SheetDescription>{persona.description}</SheetDescription>
+            <div className="flex flex-col gap-3">
+              <Textarea
+                disabled
+                className="min-h-[300px]"
+                defaultValue={textareaDefaultValue}
+                name="personaMessage"
+                placeholder="Personality of your persona"
+              />
+              <p className="text-xs text-muted-foreground">
+                {persona.isPublished
+                  ? `This is published and everyone in your organisation can use the ${persona.name} persona`
+                  : "This is only visible to you"}
+              </p>
+            </div>
           </div>
         </ScrollArea>
       </SheetContent>
