@@ -24,14 +24,10 @@ type DropdownAction = "edit" | "delete";
 export const PersonaCardContextMenu: FC<Props> = (props) => {
   const { data } = useSession();
   const isAdmin = data?.user?.isAdmin || false; 
-  const isNotFlashQuery = props.persona.name !== "FlashQuery";  
+  const isFlashQuery = props.persona.name === "FlashQuery"; 
   const { isLoading, handleAction } = useDropdownAction({
     persona: props.persona,
   });
-
- if (!isAdmin || !isNotFlashQuery) {
-    return null; 
-  }
 
   return (
     <>
@@ -44,12 +40,14 @@ export const PersonaCardContextMenu: FC<Props> = (props) => {
           )}
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItemWithIcon
-            onClick={() => personaStore.updatePersona(props.persona)}
-          >
-            <Pencil size={18} />
-            <span>Edit</span>
-          </DropdownMenuItemWithIcon>
+          {(!isFlashQuery || (isFlashQuery && isAdmin)) && (
+            <DropdownMenuItemWithIcon
+              onClick={() => personaStore.updatePersona(props.persona)}
+            >
+              <Pencil size={18} />
+              <span>Edit</span>
+            </DropdownMenuItemWithIcon>
+          )}
           <DropdownMenuItemWithIcon
             onClick={async () => await handleAction("delete")}
           >
