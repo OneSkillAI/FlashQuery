@@ -1,5 +1,6 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { DropdownMenuItemWithIcon } from "@/features/chat-page/chat-menu/chat-menu-item";
 import { RevalidateCache } from "@/features/common/navigation-helpers";
 import { LoadingIndicator } from "@/features/ui/loading";
