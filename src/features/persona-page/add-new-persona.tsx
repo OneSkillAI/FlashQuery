@@ -36,24 +36,20 @@ export const AddNewPersona: FC<Props> = (props) => {
     initialState
   );
 
-  const { data, status } = useSession();
-  const isAdmin = data?.user?.isAdmin || false;
+  const { data } = useSession();
 
   const PublicSwitch = () => {
-    if (!data || !data.user) return null;
+    if (data === undefined || data === null) return null;
 
-    return (
-      <div className="flex items-center space-x-2">
-        <Switch name="isPublished" defaultChecked={persona.isPublished} />
-        <Label htmlFor="isPublished">Publish</Label>
-      </div>
-    );
+    if (data?.user?.isAdmin) {
+      return (
+        <div className="flex items-center space-x-2">
+          <Switch name="isPublished" defaultChecked={persona.isPublished} />
+          <Label htmlFor="description">Publish</Label>
+        </div>
+      );
+    }
   };
-
-  const isReadOnly = !isAdmin || persona.name !== "FlashQuery";
-  const personaMessageDefault = isAdmin && persona.name === "FlashQuery" 
-                                ? persona.personaMessage 
-                                : "Admin Only";
 
   return (
     <Sheet
@@ -105,10 +101,9 @@ export const AddNewPersona: FC<Props> = (props) => {
                 <Textarea
                   className="min-h-[300px]"
                   required
-                  defaultValue={personaMessageDefault}
+                  defaultValue={persona.personaMessage}
                   name="personaMessage"
-                  placeholder="Personality of your assistant"
-                  readOnly={isReadOnly}
+                  placeholder="Personality of your persona"
                 />          
               </div>
             </div>
