@@ -36,27 +36,24 @@ export const AddNewPersona: FC<Props> = (props) => {
     initialState
   );
 
-  const { data } = useSession();
+  const { data, status } = useSession();
+  const isAdmin = data?.user?.isAdmin || false;
 
   const PublicSwitch = () => {
-    if (data === undefined || data === null) return null;
+    if (!data || !data.user) return null;
 
-    if (data?.user?.isAdmin) {
-      return (
-        <div className="flex items-center space-x-2">
-          <Switch name="isPublished" defaultChecked={persona.isPublished} />
-          <Label htmlFor="description">Publish</Label>
-        </div>
-      );
-    }
+    return (
+      <div className="flex items-center space-x-2">
+        <Switch name="isPublished" defaultChecked={persona.isPublished} />
+        <Label htmlFor="isPublished">Publish</Label>
+      </div>
+    );
   };
 
   return (
     <Sheet
       open={isOpened}
-      onOpenChange={(value) => {
-        personaStore.updateOpened(value);
-      }}
+      onOpenChange={(value) => personaStore.updateOpened(value)}
     >
       <SheetContent className="min-w-[480px] sm:w-[540px] flex flex-col">
         <SheetHeader>
@@ -67,16 +64,15 @@ export const AddNewPersona: FC<Props> = (props) => {
             className="flex-1 -mx-6 flex max-h-[calc(100vh-140px)]"
             type="always"
           >
-            <div className="pb-6 px-6 flex gap-8 flex-col  flex-1">
+            <div className="pb-6 px-6 flex gap-8 flex-col flex-1">
               <input type="hidden" name="id" defaultValue={persona.id} />
               {formState && formState.status === "OK" ? null : (
                 <>
-                  {formState &&
-                    formState.errors.map((error, index) => (
-                      <div key={index} className="text-red-500">
-                        {error.message}
-                      </div>
-                    ))}
+                  {formState?.errors.map((error, index) => (
+                    <div key={index} className="text-red-500">
+                      {error.message}
+                    </div>
+                  ))}
                 </>
               )}
               <div className="grid gap-2">
@@ -99,12 +95,12 @@ export const AddNewPersona: FC<Props> = (props) => {
                   placeholder="Short description"
                 />
               </div>
-              <div className="grid gap-2 flex-1 ">
+              <div className="grid gap-2 flex-1">
                 <Label htmlFor="personaMessage">Personality</Label>
                 <Textarea
                   className="min-h-[300px]"
                   required
-                  defaultValue={persona.personaMessage}
+                  defaultValue={isAdmin ? persona.personaMessage : "Admin Only"}
                   name="personaMessage"
                   placeholder="Personality of your assistant"
                 />          
