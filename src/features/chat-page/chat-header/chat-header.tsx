@@ -29,8 +29,7 @@ export const ChatHeader: FC<Props> = (props) => {
             Assistant
           </span>
         </div>
-        <div className="flex gap-2">
-          <PersonaDetail chatThread={props.chatThread} />
+        <div className="flex gap-2">        
           <ExtensionDetail
             disabled={props.chatDocuments.length !== 0}
             extensions={props.extensions}
