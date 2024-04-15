@@ -18,10 +18,10 @@ interface Props {
 }
 
 export const PersonaCard: FC<Props> = (props) => {
-  const { persona } = props;
-  const { data: sessionData } = useSession();
-  const isAdmin = sessionData?.user?.isAdmin || false;
+  const { data: sessionData } = useSession(); // Correctly destructured session data
+  const isAdmin = sessionData?.user?.isAdmin || false; // Safely access 'isAdmin'
   const isFlashQuery = props.persona.name === "FlashQuery";
+
   return (
     <Card key={props.persona.id} className="flex flex-col">
       <CardHeader className="flex flex-row">
@@ -39,7 +39,6 @@ export const PersonaCard: FC<Props> = (props) => {
         {(!isFlashQuery || isAdmin) && props.showContextMenu && (
           <ViewPersona persona={props.persona} />
         )}
-
         <StartNewPersonaChat persona={props.persona} />
       </CardFooter>
     </Card>
