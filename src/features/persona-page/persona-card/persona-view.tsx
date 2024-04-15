@@ -20,6 +20,7 @@ interface Props {
 
 export const ViewPersona: FC<Props> = (props) => {
   const { persona } = props;
+  const { data } = useSession();
   const isAdmin = data?.user?.isAdmin || false;
   const isFlashQuery = persona.name === "FlashQuery";
   return (
