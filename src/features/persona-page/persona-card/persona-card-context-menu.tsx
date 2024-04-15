@@ -48,12 +48,14 @@ export const PersonaCardContextMenu: FC<Props> = (props) => {
               <span>Edit</span>
             </DropdownMenuItemWithIcon>
           )}
-          <DropdownMenuItemWithIcon
-            onClick={async () => await handleAction("delete")}
-          >
-            <Trash size={18} />
-            <span>Delete</span>
-          </DropdownMenuItemWithIcon>
+          {(!isFlashQuery || (isFlashQuery && isAdmin)) && (
+            <DropdownMenuItemWithIcon
+              onClick={async () => await handleAction("delete")}
+            >
+              <Trash size={18} />
+              <span>Delete</span>
+            </DropdownMenuItemWithIcon>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
     </>
