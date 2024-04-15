@@ -32,13 +32,15 @@ export const PersonaCardContextMenu: FC<Props> = (props) => {
   return (
     <>
       <DropdownMenu>
-        <DropdownMenuTrigger>
-          {isLoading ? (
-            <LoadingIndicator isLoading={isLoading} />
-          ) : (
-            <MoreVertical size={18} />
-          )}
-        </DropdownMenuTrigger>
+        {(!isFlashQuery || isAdmin) && (
+          <DropdownMenuTrigger>
+            {isLoading ? (
+              <LoadingIndicator isLoading={isLoading} />
+            ) : (
+              <MoreVertical size={18} />
+            )}
+          </DropdownMenuTrigger>
+        )}
         <DropdownMenuContent>
           {(!isFlashQuery || (isFlashQuery && isAdmin)) && (
             <DropdownMenuItemWithIcon
