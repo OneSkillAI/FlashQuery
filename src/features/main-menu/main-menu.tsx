@@ -48,11 +48,13 @@ export const MainMenu = async () => {
               <Database {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="Vault">
-            <MenuLink href="/prompt" ariaLabel="Go to the Prompt Vault configuration page">
-              <Vault {...menuIconProps} />
-            </MenuLink>
-          </MenuItem>
+          {user.isAdmin && (
+            <MenuItem tooltip="Vault">
+              <MenuLink href="/prompt" ariaLabel="Go to the Prompt Vault configuration page">
+                <Vault {...menuIconProps} />
+              </MenuLink>
+            </MenuItem>
+          )}
           {user.isAdmin && (
             <>
               <MenuItem tooltip="Reporting">
