@@ -36,7 +36,7 @@ export const PersonaCard: FC<Props> = (props) => {
         {persona.description}
       </CardContent>
       <CardFooter className="gap-1 content-stretch f">
-        {props.showContextMenu && (!isFlashQuery || isAdmin) && <ViewPersona persona={persona} />}
+        {props.showContextMenu && <ViewPersona persona={persona} />}
 
         <StartNewPersonaChat persona={persona} />
       </CardFooter>
