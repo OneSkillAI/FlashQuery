@@ -50,6 +50,7 @@ export const AddNewPersona: FC<Props> = (props) => {
     );
   };
 
+  const isReadOnly = !isAdmin || persona.name !== "FlashQuery";
   const personaMessageDefault = isAdmin && persona.name === "FlashQuery" 
                                 ? persona.personaMessage 
                                 : "Admin Only";
@@ -107,6 +108,7 @@ export const AddNewPersona: FC<Props> = (props) => {
                   defaultValue={personaMessageDefault}
                   name="personaMessage"
                   placeholder="Personality of your assistant"
+                  readOnly={isReadOnly}
                 />          
               </div>
             </div>
