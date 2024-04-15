@@ -21,9 +21,16 @@ interface Props {
 type DropdownAction = "edit" | "delete";
 
 export const PersonaCardContextMenu: FC<Props> = (props) => {
+  const { data } = useSession();
+  const isAdmin = data?.user?.isAdmin || false;
+  const isFlashQuery = props.persona.name === "FlashQuery";
   const { isLoading, handleAction } = useDropdownAction({
     persona: props.persona,
   });
+
+  if (!isAdmin || !isFlashQuery) {
+    return null;
+  }
 
   return (
     <>
