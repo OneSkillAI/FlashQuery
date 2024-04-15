@@ -38,16 +38,20 @@ export const MainMenu = async () => {
               <MessageCirclePlus {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          <MenuItem tooltip="Assistants">
-            <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
-              <Drama {...menuIconProps} />
-            </MenuLink>
-          </MenuItem>
-          <MenuItem tooltip="Databases">
-            <MenuLink href="/extensions" ariaLabel="Go to the Databases configuration page">
-              <Database {...menuIconProps} />
-            </MenuLink>
-          </MenuItem>
+          {user.isAdmin && (
+            <MenuItem tooltip="Assistants">
+              <MenuLink href="/persona" ariaLabel="Go to the Persona configuration page">
+                <Drama {...menuIconProps} />
+              </MenuLink>
+            </MenuItem>
+          )}
+          {user.isAdmin && (
+            <MenuItem tooltip="Databases">
+              <MenuLink href="/extensions" ariaLabel="Go to the Databases configuration page">
+                <Database {...menuIconProps} />
+              </MenuLink>
+            </MenuItem>
+          )}
           {user.isAdmin && (
             <MenuItem tooltip="Vault">
               <MenuLink href="/prompt" ariaLabel="Go to the Prompt Vault configuration page">
